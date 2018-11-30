@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pdc_mini_aevol"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\SFMT-src-1.4\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pdc_mini_aevol">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/pdc_mini_aevol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+					<Add directory="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 pdc_mini_aevol"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pdc_mini_aevol/fast">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/pdc_mini_aevol" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+					<Add directory="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 pdc_mini_aevol/fast"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mini_aevol_gpu">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mini_aevol_gpu/fast">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu/fast"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfmt">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/libsfmt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add directory="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/."/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 sfmt"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sfmt/fast">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/libsfmt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add directory="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/."/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 sfmt/fast"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/AeTime.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/AeTime.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Dna.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Dna.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/DnaMutator.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/DnaMutator.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Gaussian.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/JumpingMT.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/JumpingMT.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Organism.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Organism.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Promoter.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Protein.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/RNA.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-common.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params11213.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params1279.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params132049.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params19937.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params216091.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params2281.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params4253.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params44497.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params607.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT-params86243.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT.c">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/SFMT.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/jump/SFMT-jump.cpp">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/jump/SFMT-jump.h">
+			<Option target="sfmt"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Stats.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Stats.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Threefry.cpp">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/Threefry.h">
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/main.cpp">
+			<Option target="pdc_mini_aevol"/>
+			<Option target="mini_aevol_gpu"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/SFMT-src-1.4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\SFMT-src-1.4\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
