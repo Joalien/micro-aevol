@@ -17,11 +17,57 @@
 					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mini_aevol_gpu">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu"/>
+					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mini_aevol_gpu/fast">
+				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSFMT_MEXP=607"/>
+					<Add option="-D__STDC_FORMAT_MACROS"/>
+					<Add option="-D__STDC_CONSTANT_MACROS"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu/fast"/>
 					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
@@ -60,52 +106,6 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 pdc_mini_aevol/fast"/>
-					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="mini_aevol_gpu">
-				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSFMT_MEXP=607"/>
-					<Add option="-D__STDC_FORMAT_MACROS"/>
-					<Add option="-D__STDC_CONSTANT_MACROS"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu"/>
-					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="mini_aevol_gpu/fast">
-				<Option output="/users/josquin/INFO/CPP/micro-aevol-master/libmini_aevol_gpu.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/users/josquin/INFO/CPP/micro-aevol-master"/>
-				<Option object_output="./"/>
-				<Option type="2"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add option="-DSFMT_MEXP=607"/>
-					<Add option="-D__STDC_FORMAT_MACROS"/>
-					<Add option="-D__STDC_CONSTANT_MACROS"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 mini_aevol_gpu/fast"/>
 					<CompileFile command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/bin/gmake -f &quot;/users/josquin/INFO/CPP/micro-aevol-master/Makefile&quot;  VERBOSE=1 clean"/>
@@ -265,8 +265,8 @@
 			<Option target="mini_aevol_gpu"/>
 		</Unit>
 		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/main.cpp">
-			<Option target="pdc_mini_aevol"/>
 			<Option target="mini_aevol_gpu"/>
+			<Option target="pdc_mini_aevol"/>
 		</Unit>
 		<Unit filename="/users/josquin/INFO/CPP/micro-aevol-master/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

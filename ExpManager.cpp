@@ -471,9 +471,9 @@ void ExpManager::run_a_step(double w_max, double selection_pressure, bool first_
         //transfer_out(this);
 
 
-        std::cout<<"LOG,"<<duration_selection<<","<<duration_mutation<<","<<duration_start_stop_RNA
-                 <<","<<duration_start_protein<<","<<duration_compute_protein<<","<<duration_translate_protein
-                 <<","<<duration_compute_phenotype<<","<<duration_compute_phenotype<<","<<duration_compute_fitness<<std::endl;
+//        std::cout<<"LOG,"<<duration_selection<<","<<duration_mutation<<","<<duration_start_stop_RNA
+//                 <<","<<duration_start_protein<<","<<duration_compute_protein<<","<<duration_translate_protein
+//                 <<","<<duration_compute_phenotype<<","<<duration_compute_phenotype<<","<<duration_compute_fitness<<std::endl;
     }
     for (int indiv_id = 1; indiv_id < nb_indivs_; indiv_id++) {
         prev_internal_organisms_[indiv_id] = internal_organisms_[indiv_id];
@@ -1405,7 +1405,7 @@ void ExpManager::run_evolution(int nb_gen) {
       auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
 
         firstGen = false;
-        printf("Generation %d : Best individual fitness %e\n",AeTime::time(),best_indiv->fitness);
+        //printf("Generation %d : Best individual fitness %e\n",AeTime::time(),best_indiv->fitness);
 
         if (AeTime::time() % backup_step_ == 0) {
             printf("Save !!\n");

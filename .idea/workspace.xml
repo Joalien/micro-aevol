@@ -13,7 +13,35 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fd6bc8b-36b9-43b9-ac3a-90255f93f879" name="Default Changelist" comment="" />
+    <list default="true" id="5fd6bc8b-36b9-43b9-ac3a-90255f93f879" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/ExpManager.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/ExpManager.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/mini_aevol_gpu.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/pdc_mini_aevol.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/pdc_mini_aevol.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeFiles/pdc_mini_aevol.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeFiles/pdc_mini_aevol.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Dna.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExpManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ExpManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Organism.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Organism.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/sfmt.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/sfmt.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/sfmt.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/sfmt.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SFMT-src-1.4/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/SFMT-src-1.4/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libmini_aevol_gpu.a" beforeDir="false" afterPath="$PROJECT_DIR$/libmini_aevol_gpu.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc_mini_aevol" beforeDir="false" afterPath="$PROJECT_DIR$/pdc_mini_aevol" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdc_mini_aevol.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/pdc_mini_aevol.cbp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
     <ignored path="$PROJECT_DIR$/SFMT-src-1.4/CMakeFiles/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +51,170 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Default" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1462">
+              <caret line="148" column="13" lean-forward="true" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#114#0" />
+                <element signature="e#1457#3966#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dna.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
+              <folding>
+                <element signature="e#0#2#0" />
+                <element signature="e#84#133#0" />
+                <element signature="e#135#310#0" />
+                <element signature="e#312#396#0" />
+                <element signature="e#398#437#0" />
+                <element signature="e#439#488#0" />
+                <element signature="e#490#682#0" />
+                <element signature="e#684#853#0" />
+                <element signature="e#855#906#0" />
+                <element signature="e#908#1005#0" />
+                <element signature="e#2181#2932#0" />
+                <element signature="e#2934#3373#0" />
+                <element signature="e#3375#3718#0" />
+                <element signature="e#3720#4055#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Organism.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="475" column="43" selection-start-line="475" selection-start-column="4" selection-end-line="475" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#114#0" />
+                <element signature="e#1480#1720#0" />
+                <element signature="e#1480#2001#0" />
+                <element signature="e#2003#2201#0" />
+                <element signature="e#2003#2440#0" />
+                <element signature="e#2442#2589#0" />
+                <element signature="e#2442#3114#0" />
+                <element signature="e#3116#3269#0" />
+                <element signature="e#3116#3417#0" />
+                <element signature="e#3419#3455#0" />
+                <element signature="e#3419#3818#0" />
+                <element signature="e#3820#3935#0" />
+                <element signature="e#3820#4243#0" />
+                <element signature="e#4245#4363#0" />
+                <element signature="e#4245#4705#0" />
+                <element signature="e#4707#4832#0" />
+                <element signature="e#4707#5015#0" />
+                <element signature="e#5017#5263#0" />
+                <element signature="e#5017#5767#0" />
+                <element signature="e#5769#5897#0" />
+                <element signature="e#5769#6260#0" />
+                <element signature="e#6262#6329#0" />
+                <element signature="e#6262#6846#0" />
+                <element signature="e#6848#6882#0" />
+                <element signature="e#6848#7235#0" />
+                <element signature="e#7237#7628#0" />
+                <element signature="e#7631#8486#0" />
+                <element signature="e#8488#8755#0" />
+                <element signature="e#8757#8992#0" />
+                <element signature="e#8994#9660#0" />
+                <element signature="e#9663#10528#0" />
+                <element signature="e#10530#10963#0" />
+                <element signature="e#10965#11544#0" />
+                <element signature="e#11546#11867#0" />
+                <element signature="e#11895#12593#0" />
+                <element signature="e#12595#13005#0" />
+                <element signature="e#13007#13417#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExpManager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-235">
+              <caret line="570" lean-forward="true" selection-start-line="570" selection-end-line="570" />
+              <folding>
+                <element signature="e#0#114#0" />
+                <element signature="e#1745#2407#0" />
+                <element signature="e#1745#5297#0" />
+                <element signature="e#5299#5436#0" />
+                <element signature="e#5299#5909#0" />
+                <element signature="e#5911#5955#0" />
+                <element signature="e#5911#6279#0" />
+                <element signature="e#6281#6393#0" />
+                <element signature="e#6281#8247#0" />
+                <element signature="e#8249#8370#0" />
+                <element signature="e#8249#10549#0" />
+                <element signature="e#10551#10666#0" />
+                <element signature="e#10551#11935#0" />
+                <element signature="e#11937#11982#0" />
+                <element signature="e#11937#12322#0" />
+                <element signature="e#12324#12665#0" />
+                <element signature="e#12324#18703#0" />
+                <element signature="e#18706#18895#0" />
+                <element signature="e#18706#20002#0" />
+                <element signature="e#20004#20086#0" />
+                <element signature="e#20004#24584#0" />
+                <element signature="e#24587#24761#0" />
+                <element signature="e#24587#27450#0" />
+                <element signature="e#27452#27649#0" />
+                <element signature="e#27452#29138#0" />
+                <element signature="e#29140#29269#0" />
+                <element signature="e#29140#36468#0" />
+                <element signature="e#36470#36735#0" />
+                <element signature="e#36470#46893#0" />
+                <element signature="e#46895#47036#0" />
+                <element signature="e#46895#51970#0" />
+                <element signature="e#51972#52210#0" />
+                <element signature="e#51972#53306#0" />
+                <element signature="e#53308#53494#0" />
+                <element signature="e#53308#55322#0" />
+                <element signature="e#55324#55441#0" />
+                <element signature="e#55324#56964#0" />
+                <element signature="e#56967#58823#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>do_mu</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ExpManager.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Organism.cpp" />
+        <option value="$PROJECT_DIR$/Dna.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="8" />
     <option name="width" value="892" />
     <option name="height" value="485" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -97,39 +284,204 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543592145123</updated>
-      <workItem from="1543592146292" duration="680000" />
+      <workItem from="1543592146292" duration="5219000" />
+      <workItem from="1544003893826" duration="12000" />
+      <workItem from="1545030446959" duration="2988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="680000" />
+    <option name="totallyTimeSpent" value="8219000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="0" width="892" height="485" extended-state="1" />
+    <frame x="0" y="0" width="1366" height="736" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38915095" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="CMake" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.55833334" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32840723" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36945814" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" visible="true" weight="0.23316912" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="CMake" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Algorithms.cuh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AeTime.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="148" column="13" lean-forward="true" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#114#0" />
+            <element signature="e#1457#3966#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dna.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Organism.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="22" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#5137#5344#0" />
+            <element signature="e#5350#5557#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dna.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#2#0" />
+            <element signature="e#84#133#0" />
+            <element signature="e#135#310#0" />
+            <element signature="e#312#396#0" />
+            <element signature="e#398#437#0" />
+            <element signature="e#439#488#0" />
+            <element signature="e#490#682#0" />
+            <element signature="e#684#853#0" />
+            <element signature="e#855#906#0" />
+            <element signature="e#908#1005#0" />
+            <element signature="e#2181#2932#0" />
+            <element signature="e#2934#3373#0" />
+            <element signature="e#3375#3718#0" />
+            <element signature="e#3720#4055#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Organism.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="475" column="43" selection-start-line="475" selection-start-column="4" selection-end-line="475" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#114#0" />
+            <element signature="e#1480#1720#0" />
+            <element signature="e#1480#2001#0" />
+            <element signature="e#2003#2201#0" />
+            <element signature="e#2003#2440#0" />
+            <element signature="e#2442#2589#0" />
+            <element signature="e#2442#3114#0" />
+            <element signature="e#3116#3269#0" />
+            <element signature="e#3116#3417#0" />
+            <element signature="e#3419#3455#0" />
+            <element signature="e#3419#3818#0" />
+            <element signature="e#3820#3935#0" />
+            <element signature="e#3820#4243#0" />
+            <element signature="e#4245#4363#0" />
+            <element signature="e#4245#4705#0" />
+            <element signature="e#4707#4832#0" />
+            <element signature="e#4707#5015#0" />
+            <element signature="e#5017#5263#0" />
+            <element signature="e#5017#5767#0" />
+            <element signature="e#5769#5897#0" />
+            <element signature="e#5769#6260#0" />
+            <element signature="e#6262#6329#0" />
+            <element signature="e#6262#6846#0" />
+            <element signature="e#6848#6882#0" />
+            <element signature="e#6848#7235#0" />
+            <element signature="e#7237#7628#0" />
+            <element signature="e#7631#8486#0" />
+            <element signature="e#8488#8755#0" />
+            <element signature="e#8757#8992#0" />
+            <element signature="e#8994#9660#0" />
+            <element signature="e#9663#10528#0" />
+            <element signature="e#10530#10963#0" />
+            <element signature="e#10965#11544#0" />
+            <element signature="e#11546#11867#0" />
+            <element signature="e#11895#12593#0" />
+            <element signature="e#12595#13005#0" />
+            <element signature="e#13007#13417#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="570" lean-forward="true" selection-start-line="570" selection-end-line="570" />
+          <folding>
+            <element signature="e#0#114#0" />
+            <element signature="e#1745#2407#0" />
+            <element signature="e#1745#5297#0" />
+            <element signature="e#5299#5436#0" />
+            <element signature="e#5299#5909#0" />
+            <element signature="e#5911#5955#0" />
+            <element signature="e#5911#6279#0" />
+            <element signature="e#6281#6393#0" />
+            <element signature="e#6281#8247#0" />
+            <element signature="e#8249#8370#0" />
+            <element signature="e#8249#10549#0" />
+            <element signature="e#10551#10666#0" />
+            <element signature="e#10551#11935#0" />
+            <element signature="e#11937#11982#0" />
+            <element signature="e#11937#12322#0" />
+            <element signature="e#12324#12665#0" />
+            <element signature="e#12324#18703#0" />
+            <element signature="e#18706#18895#0" />
+            <element signature="e#18706#20002#0" />
+            <element signature="e#20004#20086#0" />
+            <element signature="e#20004#24584#0" />
+            <element signature="e#24587#24761#0" />
+            <element signature="e#24587#27450#0" />
+            <element signature="e#27452#27649#0" />
+            <element signature="e#27452#29138#0" />
+            <element signature="e#29140#29269#0" />
+            <element signature="e#29140#36468#0" />
+            <element signature="e#36470#36735#0" />
+            <element signature="e#36470#46893#0" />
+            <element signature="e#46895#47036#0" />
+            <element signature="e#46895#51970#0" />
+            <element signature="e#51972#52210#0" />
+            <element signature="e#51972#53306#0" />
+            <element signature="e#53308#53494#0" />
+            <element signature="e#53308#55322#0" />
+            <element signature="e#55324#55441#0" />
+            <element signature="e#55324#56964#0" />
+            <element signature="e#56967#58823#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

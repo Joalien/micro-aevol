@@ -177,6 +177,7 @@ int main(int argc, char* argv[]) {
 
 
     ExpManager *exp_manager;
+    //22% time
     if (resume == -1) {
         exp_manager = new ExpManager(height, width, seed, mutation_rate, genome_size, 0.03, 100,
                                                  backup_step);
@@ -185,6 +186,7 @@ int main(int argc, char* argv[]) {
         exp_manager = new ExpManager(resume);
     }
 
+    //77% time
     exp_manager->run_evolution(nbstep);
 
     delete exp_manager;

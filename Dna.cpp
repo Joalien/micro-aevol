@@ -57,16 +57,13 @@ int Dna::promoter_at(int pos) {
     prom_dist[motif_id] =
         PROM_SEQ[motif_id] ==
         seq_[
-            pos + motif_id >= seq_.size() ? pos +
-                                            motif_id -
-                                            seq_.size()
-                                          : pos +
-                                            motif_id]
+            pos + motif_id >= seq_.size() ?// == (pos + motif_id) % seq_.size()
+            pos + motif_id - seq_.size() :
+            pos + motif_id]
         ? 0
         : 1;
 
   }
-
 
   // Computing if a promoter exists at that position
   int dist_lead = prom_dist[0] +
@@ -92,7 +89,7 @@ int Dna::promoter_at(int pos) {
                   prom_dist[20] +
                   prom_dist[21];
 
-  return dist_lead;
+  return dist_lead; // return distance between seq_ and const promoter. 0 is equals
 }
 
 int Dna::terminator_at(int pos) {
