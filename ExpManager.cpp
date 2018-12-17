@@ -549,6 +549,7 @@ void ExpManager::start_stop_RNA(int indiv_id) {
             int dist_lead = internal_organisms_[indiv_id]->dna_->promoter_at(dna_pos);
 
             if (dist_lead <= 4) {
+                //std::cout << dna_pos << std::endl;
                 Promoter* nprom = new Promoter(dna_pos, dist_lead);
                 int prom_idx = internal_organisms_[indiv_id]->count_prom;
                 internal_organisms_[indiv_id]->count_prom =
@@ -562,6 +563,7 @@ void ExpManager::start_stop_RNA(int indiv_id) {
             int dist_term_lead = internal_organisms_[indiv_id]->dna_->terminator_at(dna_pos);
 
             if (dist_term_lead == 4) {
+                //std::cout << dna_pos << std::endl;
                 internal_organisms_[indiv_id]->terminators.insert(
                         dna_pos);
             }

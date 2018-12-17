@@ -10,14 +10,15 @@
 #include <cstdint>
 #include <vector>
 #include <zlib.h>
+#include <bitset>
 
 #include "Threefry.h"
 
 constexpr int8_t CODON_SIZE = 3;
 
-constexpr const char* PROM_SEQ = "0101011001110010010110";
-constexpr const char* SHINE_DAL_SEQ = "011011000";
-constexpr const char* PROTEIN_END = "001"; // CODON_STOP
+const std::bitset<22> PROM_SEQ (std::string("0101011001110010010110"));
+const std::bitset<9> SHINE_DAL_SEQ (std::string("0110110000000"));
+const std::bitset<3> PROTEIN_END (std::string("001")); // CODON_STOP
 
 class ExpManager;
 
@@ -45,9 +46,9 @@ class Dna {
 
   void do_switch(int pos);
 
-  int promoter_at(int pos);
+  int8_t promoter_at(int pos);
 
-  int terminator_at(int pos);
+  int8_t terminator_at(int pos);
 
   bool shine_dal_start(int pos);
 
@@ -55,5 +56,5 @@ class Dna {
 
   int codon_at(int pos);
 
-  std::vector<char> seq_;
+  std::bitset<5000> seq_;
 };
