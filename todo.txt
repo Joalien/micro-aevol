@@ -1,0 +1,4 @@
+Passer en bitset
+vérifier pk le nombre d'appel de promoter_at est si élevé
+finir la parallélisation
+
