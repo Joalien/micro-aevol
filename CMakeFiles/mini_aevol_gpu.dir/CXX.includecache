@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/users/josquin/INFO/CPP/micro-aevol-master/AeTime.h
+
+/users/josquin/INFO/CPP/micro-aevol-master/Algorithms.h
+
+/users/josquin/INFO/CPP/micro-aevol-master/Dna.cpp
+Dna.h
+/users/josquin/INFO/CPP/micro-aevol-master/Dna.h
+ExpManager.h
+/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h
+
 /users/josquin/INFO/CPP/micro-aevol-master/Dna.h
 cstdio
 -
@@ -22,6 +32,14 @@ zlib.h
 Threefry.h
 /users/josquin/INFO/CPP/micro-aevol-master/Threefry.h
 
+/users/josquin/INFO/CPP/micro-aevol-master/DnaMutator.cpp
+DnaMutator.h
+/users/josquin/INFO/CPP/micro-aevol-master/DnaMutator.h
+ExpManager.h
+/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h
+AeTime.h
+/users/josquin/INFO/CPP/micro-aevol-master/AeTime.h
+
 /users/josquin/INFO/CPP/micro-aevol-master/DnaMutator.h
 list
 -
@@ -34,6 +52,40 @@ Threefry.h
 MutationEvent.h
 /users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.h
 
+/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.cpp
+cmath
+-
+map
+-
+algorithm
+-
+sys/stat.h
+-
+err.h
+-
+chrono
+-
+iostream
+-
+ExpManager.h
+/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h
+Algorithms.h
+/users/josquin/INFO/CPP/micro-aevol-master/Algorithms.h
+AeTime.h
+/users/josquin/INFO/CPP/micro-aevol-master/AeTime.h
+Promoter.h
+/users/josquin/INFO/CPP/micro-aevol-master/Promoter.h
+RNA.h
+/users/josquin/INFO/CPP/micro-aevol-master/RNA.h
+Protein.h
+/users/josquin/INFO/CPP/micro-aevol-master/Protein.h
+Organism.h
+/users/josquin/INFO/CPP/micro-aevol-master/Organism.h
+Gaussian.h
+/users/josquin/INFO/CPP/micro-aevol-master/Gaussian.h
+utility
+-
+
 /users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h
 Threefry.h
 /users/josquin/INFO/CPP/micro-aevol-master/Threefry.h
@@ -43,6 +95,16 @@ Stats.h
 /users/josquin/INFO/CPP/micro-aevol-master/Stats.h
 memory
 -
+
+/users/josquin/INFO/CPP/micro-aevol-master/Gaussian.h
+cmath
+-
+
+/users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.cpp
+MutationEvent.h
+/users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.h
+Dna.h
+/users/josquin/INFO/CPP/micro-aevol-master/Dna.h
 
 /users/josquin/INFO/CPP/micro-aevol-master/MutationEvent.h
 cstdint
@@ -222,6 +284,10 @@ features/compilerfeatures.h
 array.h
 /users/josquin/INFO/CPP/micro-aevol-master/Random123/array.h
 
+/users/josquin/INFO/CPP/micro-aevol-master/Stats.cpp
+Stats.h
+/users/josquin/INFO/CPP/micro-aevol-master/Stats.h
+
 /users/josquin/INFO/CPP/micro-aevol-master/Stats.h
 cstdint
 -
@@ -245,14 +311,4 @@ utility
 -
 cfloat
 -
-
-/users/josquin/INFO/CPP/micro-aevol-master/main.cpp
-iostream
--
-getopt.h
--
-cstring
--
-ExpManager.h
-/users/josquin/INFO/CPP/micro-aevol-master/ExpManager.h
 
