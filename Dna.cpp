@@ -4,14 +4,16 @@
 
 #include "Dna.h"
 #include "ExpManager.h"
+#include <omp.h>
 
 Dna::Dna(const Dna& clone) : seq_(clone.seq_) {
 }
 
 Dna::Dna(int length, Threefry::Gen& rng) : seq_(length) {
   // Generate a random genome
+#pragma omp parallel for
   for (int32_t i = 0; i < length; i++) {
-    seq_[i] = '0' + rng.random(NB_BASE);
+    seq_[i] = static_cast<char>('0' + rng.random(NB_BASE));
   }
 }
 
@@ -48,21 +50,22 @@ void Dna::do_switch(int pos) {
   else seq_[pos] = '0';
 }
 
-
+//Compute with a slow algorithm Hamming distance
 int Dna::promoter_at(int pos) {
   int prom_dist[22];
+//  int dist_lead=0;
 
+//#pragma omp parallel for reduction(+:dist_lead)
   for (int motif_id = 0; motif_id < 22; motif_id++) {
     // Searching for the promoter
-    prom_dist[motif_id] =
+      /*dist_lead += */prom_dist[motif_id] =
         PROM_SEQ[motif_id] ==
-        seq_[
-            pos + motif_id >= seq_.size() ?// == (pos + motif_id) % seq_.size()
+        seq_[//(pos + motif_id) % seq_.size()
+            pos + motif_id >= seq_.size() ?
             pos + motif_id - seq_.size() :
             pos + motif_id]
         ? 0
         : 1;
-
   }
 
   // Computing if a promoter exists at that position
