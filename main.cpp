@@ -29,6 +29,7 @@
 #include <iostream>
 #include <getopt.h>
 #include <cstring>
+#include <omp.h>
 
 #include "ExpManager.h"
 
@@ -69,6 +70,8 @@ void print_help(char* prog_path) {
 }
 
 int main(int argc, char* argv[]) {
+
+    omp_set_num_threads(8);
 
     int nbstep = -1;
     int width = -1;
@@ -177,7 +180,6 @@ int main(int argc, char* argv[]) {
 
 
     ExpManager *exp_manager;
-    //22% time
     if (resume == -1) {
         exp_manager = new ExpManager(height, width, seed, mutation_rate, genome_size, 0.03, 100,
                                                  backup_step);
@@ -186,7 +188,6 @@ int main(int argc, char* argv[]) {
         exp_manager = new ExpManager(resume);
     }
 
-    //77% time
     exp_manager->run_evolution(nbstep);
 
     delete exp_manager;
