@@ -559,7 +559,7 @@ void ExpManager::run_a_step(double w_max, double selection_pressure, bool first_
  * @param indiv_id : Unique identification number of the organism
  */
 void ExpManager::start_stop_RNA(int indiv_id) {
-
+//#pragma omp parallel for
     for (int dna_pos = 0; dna_pos < internal_organisms_[indiv_id]->length(); dna_pos++) {
         if (internal_organisms_[indiv_id]->length() >= PROM_SIZE) {
             int dist_lead = internal_organisms_[indiv_id]->dna_->promoter_at(dna_pos);
@@ -1388,6 +1388,7 @@ void ExpManager::selection(int indiv_id) {
  * @param nb_gen : Number of generations to simulate
  */
 void ExpManager::run_evolution(int nb_gen) {
+#pragma omp parallel for
     for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
         auto rng = std::move(rng_->gen(indiv_id, Threefry::MUTATION));
 
@@ -1412,6 +1413,8 @@ void ExpManager::run_evolution(int nb_gen) {
 
     printf("Running evolution from %d to %d\n",AeTime::time(),AeTime::time()+nb_gen);
     bool firstGen = true;
+
+    //Function run_a_step should be finished before the next one start. Not parallizable !!!
     for (int gen = 0; gen < nb_gen+1; gen++) {
         AeTime::plusplus();
 
