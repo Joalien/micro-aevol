@@ -3,3 +3,5 @@ vérifier pk le nombre d'appel de promoter_at est si élevé
 
 finir la parallélisation, trouver le meilleur compromis pour grainsize(N)
 Regarder avec Intell Parallel Studio si les coeurs sont tous utilisés à 100% et si à la fin des boucles il n'y a pas qu'un seul coeur qui toune !
+
+Compilez avec -o3 et/ou -AVX

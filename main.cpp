@@ -72,6 +72,7 @@ void print_help(char* prog_path) {
 int main(int argc, char* argv[]) {
 
     omp_set_num_threads(8);
+//    omp_set_schedule(omp_sched_dynamic, 100);
 
     int nbstep = -1;
     int width = -1;
