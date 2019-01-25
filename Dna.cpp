@@ -11,7 +11,7 @@ Dna::Dna(const Dna& clone) : seq_(clone.seq_) {
 
 Dna::Dna(int length, Threefry::Gen& rng) : seq_(length) {
   // Generate a random genome
-#pragma omp parallel for
+//#pragma omp parallel for
   for (int32_t i = 0; i < length; i++) {
     seq_[i] = static_cast<char>('0' + rng.random(NB_BASE));
   }

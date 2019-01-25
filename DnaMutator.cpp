@@ -64,11 +64,7 @@ void DnaMutator::generate_small_mutations() {
   nb_mut_ = nb_swi_;
   cpt_mut_ = nb_mut_;
 
-  if (nb_mut_ > 0) {
-    if (!hasMutate_) {
-      hasMutate_ = true;
-    }
-  }
+  if (nb_mut_ > 0) hasMutate_ = true;
 }
 
 /**
@@ -83,14 +79,14 @@ MutationEvent* DnaMutator::generate_next_mutation(int length) {
   MutationEvent* mevent = nullptr;
 
   if (cpt_mut_>0) {
-    random_value = mut_prng_->random(cpt_mut_);
+    random_value = mut_prng_->random(static_cast<unsigned int>(cpt_mut_));
     cpt_mut_--;
 
 
     if (random_value < nb_swi_) {
       nb_swi_--;
 
-      int pos = mut_prng_->random(length_);
+      int pos = mut_prng_->random(static_cast<unsigned int>(length_));
 
       mevent = new MutationEvent();
       mevent->switch_pos(pos);

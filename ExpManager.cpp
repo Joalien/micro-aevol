@@ -339,7 +339,7 @@ void ExpManager::load(int t) {
  * @param indiv_id : Organism unique id
  */
 void ExpManager::do_mutation(int indiv_id) {
-    auto rng = std::move(rng_->gen(indiv_id, Threefry::MUTATION));
+    auto rng = std::move(rng_->gen(static_cast<size_t>(indiv_id), Threefry::MUTATION));
 
     delete dna_mutator_array_[indiv_id];
     dna_mutator_array_[indiv_id] = new DnaMutator(
@@ -358,7 +358,8 @@ void ExpManager::do_mutation(int indiv_id) {
                 next_generation_reproducer_[indiv_id];
 
         internal_organisms_[indiv_id]->apply_mutations();
-        internal_organisms_[indiv_id]->remove_all_promoters();
+        //Removing next line slightly increase performance, without changing results
+//        internal_organisms_[indiv_id]->remove_all_promoters();
         internal_organisms_[indiv_id]->locate_promoters();
     } else {
         int parent_id = next_generation_reproducer_[indiv_id];
@@ -395,179 +396,174 @@ ExpManager::~ExpManager() {
  * @param first_gen : is it the first generation simulated ? (generation 1 or first generation after a restore)
  */
 void ExpManager::run_a_step(double w_max, double selection_pressure, bool first_gen) {
-#pragma omp sections
-    {
     // Running the simulation process for each organism
-#pragma omp section
-        {
-            high_resolution_clock::time_point t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                selection(indiv_id);
-            }
-            high_resolution_clock::time_point t2 = high_resolution_clock::now();
-            auto duration_selection = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                do_mutation(indiv_id);
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_mutation = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                opt_prom_compute_RNA(indiv_id);
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_start_stop_RNA = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (dna_mutator_array_[indiv_id]->hasMutate()) {
-                    start_protein(indiv_id);
-                }
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_start_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (dna_mutator_array_[indiv_id]->hasMutate()) {
-                    compute_protein(indiv_id);
-                }
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_compute_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (dna_mutator_array_[indiv_id]->hasMutate()) {
-                    translate_protein(indiv_id, w_max);
-                }
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_translate_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (dna_mutator_array_[indiv_id]->hasMutate()) {
-                    compute_phenotype(indiv_id);
-                }
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_compute_phenotype = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-
-            t1 = high_resolution_clock::now();
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (dna_mutator_array_[indiv_id]->hasMutate()) {
-                    compute_fitness(indiv_id, selection_pressure);
-                }
-            }
-            t2 = high_resolution_clock::now();
-            auto duration_compute_fitness = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
-
-            //transfer_out(this);
-
-
-    //        std::cout<<"LOG,"<<duration_selection<<","<<duration_mutation<<","<<duration_start_stop_RNA
-    //                 <<","<<duration_start_protein<<","<<duration_compute_protein<<","<<duration_translate_protein
-    //                 <<","<<duration_compute_phenotype<<","<<duration_compute_phenotype<<","<<duration_compute_fitness<<std::endl;
+#pragma omp parallel
+    {
+        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            selection(indiv_id);
         }
-#pragma omp section
-        {
-#pragma omp parallel for
-            for (int indiv_id = 1; indiv_id < nb_indivs_; indiv_id++) {
-                prev_internal_organisms_[indiv_id] = internal_organisms_[indiv_id];
-                internal_organisms_[indiv_id] = nullptr;
+        high_resolution_clock::time_point t2 = high_resolution_clock::now();
+        auto duration_selection = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+
+        t1 = high_resolution_clock::now();
+        //UNE PARALÉLISATION ICI EST TRÈS EFFICACE !
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            do_mutation(indiv_id);
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_mutation = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            opt_prom_compute_RNA(indiv_id);
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_start_stop_RNA = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            if (dna_mutator_array_[indiv_id]->hasMutate()) {
+                start_protein(indiv_id);
             }
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_start_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 
-            // Search for the best
-            double best_fitness = prev_internal_organisms_[0]->fitness;
-            int idx_best = 0;
-#pragma omp parallel for
-            for (int indiv_id = 1; indiv_id < nb_indivs_; indiv_id++) {
-                if (prev_internal_organisms_[indiv_id]->fitness > best_fitness) {
-                    idx_best = indiv_id;
-                    best_fitness = prev_internal_organisms_[indiv_id]->fitness;
-                }
+
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            if (dna_mutator_array_[indiv_id]->hasMutate()) {
+                compute_protein(indiv_id);
             }
-            best_indiv = prev_internal_organisms_[idx_best];
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_compute_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 
 
-            // Stats
-            if (first_gen) {
-                stats_best = new Stats(this, AeTime::time(), true);
-                stats_mean = new Stats(this, AeTime::time(), false);
-            } else {
-                stats_best->reinit(AeTime::time());
-                stats_mean->reinit(AeTime::time());
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            if (dna_mutator_array_[indiv_id]->hasMutate()) {
+                translate_protein(indiv_id, w_max);
             }
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_translate_protein = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 
-            std::vector<int> already_seen;
-#pragma omp parallel for
-            for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-                if (std::find(already_seen.begin(), already_seen.end(), indiv_id) == already_seen.end()) {
-                    prev_internal_organisms_[indiv_id]->reset_stats();
 
-                    for (int i = 0; i < prev_internal_organisms_[indiv_id]->rna_count_; i++) {
-                        if (prev_internal_organisms_[indiv_id]->rnas[i] != nullptr) {
-                            if (prev_internal_organisms_[indiv_id]->rnas[i]->is_coding_)
-                                prev_internal_organisms_[indiv_id]->nb_coding_RNAs++;
-                            else
-                                prev_internal_organisms_[indiv_id]->nb_non_coding_RNAs++;
-                        }
-                    }
-
-                    for (int i = 0; i < prev_internal_organisms_[indiv_id]->protein_count_; i++) {
-                        if (prev_internal_organisms_[indiv_id]->rnas[i] != nullptr) {
-                            if (prev_internal_organisms_[indiv_id]->proteins[i]->is_functional) {
-                                prev_internal_organisms_[indiv_id]->nb_func_genes++;
-                            } else {
-                                prev_internal_organisms_[indiv_id]->nb_non_func_genes++;
-                            }
-                            if (prev_internal_organisms_[indiv_id]->proteins[i]->h > 0) {
-                                prev_internal_organisms_[indiv_id]->nb_genes_activ++;
-                            } else {
-                                prev_internal_organisms_[indiv_id]->nb_genes_inhib++;
-                            }
-                        }
-                    }
-                }
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            if (dna_mutator_array_[indiv_id]->hasMutate()) {
+                compute_phenotype(indiv_id);
             }
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_compute_phenotype = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
 
-            stats_best->write_best();
-            stats_mean->write_average();
+
+        t1 = high_resolution_clock::now();
+#pragma omp for
+        for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+            if (dna_mutator_array_[indiv_id]->hasMutate()) {
+                compute_fitness(indiv_id, selection_pressure);
+            }
+        }
+        t2 = high_resolution_clock::now();
+        auto duration_compute_fitness = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
+    }
+    //transfer_out(this);
+
+
+//    std::cout<<"LOG,"<<duration_selection<<","<<duration_mutation<<","<<duration_start_stop_RNA
+//             <<","<<duration_start_protein<<","<<duration_compute_protein<<","<<duration_translate_protein
+//             <<","<<duration_compute_phenotype<<","<<duration_compute_phenotype<<","<<duration_compute_fitness<<std::endl;
+
+
+    for (int indiv_id = 1; indiv_id < nb_indivs_; indiv_id++) {
+        prev_internal_organisms_[indiv_id] = internal_organisms_[indiv_id];
+        internal_organisms_[indiv_id] = nullptr;
+    }
+
+    // Search for the best
+    double best_fitness = prev_internal_organisms_[0]->fitness;
+    int idx_best = 0;
+    for (int indiv_id = 1; indiv_id < nb_indivs_; indiv_id++) {
+        if (prev_internal_organisms_[indiv_id]->fitness > best_fitness) {
+            idx_best = indiv_id;
+            best_fitness = prev_internal_organisms_[indiv_id]->fitness;
         }
     }
+    best_indiv = prev_internal_organisms_[idx_best];
+
+
+    // Stats
+    if (first_gen) {
+        stats_best = new Stats(this, AeTime::time(), true);
+        stats_mean = new Stats(this, AeTime::time(), false);
+    } else {
+        stats_best->reinit(AeTime::time());
+        stats_mean->reinit(AeTime::time());
+    }
+
+    std::vector<int> already_seen;
+//NON PARALELLISABLE
+    for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
+        if (std::find(already_seen.begin(), already_seen.end(), indiv_id) == already_seen.end()) {
+            prev_internal_organisms_[indiv_id]->reset_stats();
+
+            for (int i = 0; i < prev_internal_organisms_[indiv_id]->rna_count_; i++) {
+                if (prev_internal_organisms_[indiv_id]->rnas[i] != nullptr) {
+                    if (prev_internal_organisms_[indiv_id]->rnas[i]->is_coding_)
+                        prev_internal_organisms_[indiv_id]->nb_coding_RNAs++;
+                    else
+                        prev_internal_organisms_[indiv_id]->nb_non_coding_RNAs++;
+                }
+            }
+
+            for (int i = 0; i < prev_internal_organisms_[indiv_id]->protein_count_; i++) {
+                if (prev_internal_organisms_[indiv_id]->rnas[i] != nullptr) {
+                    if (prev_internal_organisms_[indiv_id]->proteins[i]->is_functional) {
+                        prev_internal_organisms_[indiv_id]->nb_func_genes++;
+                    } else {
+                        prev_internal_organisms_[indiv_id]->nb_non_func_genes++;
+                    }
+                    if (prev_internal_organisms_[indiv_id]->proteins[i]->h > 0) {
+                        prev_internal_organisms_[indiv_id]->nb_genes_activ++;
+                    } else {
+                        prev_internal_organisms_[indiv_id]->nb_genes_inhib++;
+                    }
+                }
+            }
+        }
+    }
+
+    stats_best->write_best();
+    stats_mean->write_average();
 }
 
+
 /**
- * Search for Promoters and Terminators (i.e. beginning and ending of a RNA) within the whole DNA of an Organism
+ * Search for Promoters and Terminators before the run of evolution. No need to otpise
+ * (i.e. beginning and ending of a RNA) within the whole DNA of an Organism
  *
  * @param indiv_id : Unique identification number of the organism
  */
 void ExpManager::start_stop_RNA(int indiv_id) {
-#pragma omp taskloop grainsize(1000)
     for (int dna_pos = 0; dna_pos < internal_organisms_[indiv_id]->length(); dna_pos++) {
         if (internal_organisms_[indiv_id]->length() >= PROM_SIZE) {
             int dist_lead = internal_organisms_[indiv_id]->dna_->promoter_at(dna_pos);
 
             if (dist_lead <= 4) {
-                Promoter* nprom = new Promoter(dna_pos, dist_lead);
+                auto * nprom = new Promoter(dna_pos, dist_lead);
                 int prom_idx;
-                #pragma omp atomic capture
+                //#pragma omp atomic capture
                 prom_idx = internal_organisms_[indiv_id]->count_prom++;
 
                 internal_organisms_[indiv_id]->promoters[prom_idx] = nprom;
@@ -1388,9 +1384,9 @@ void ExpManager::selection(int indiv_id) {
  * @param nb_gen : Number of generations to simulate
  */
 void ExpManager::run_evolution(int nb_gen) {
-#pragma omp parallel for
+//#pragma omp parallel for
     for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
-        auto rng = std::move(rng_->gen(indiv_id, Threefry::MUTATION));
+        auto rng = std::move(rng_->gen(static_cast<size_t>(indiv_id), Threefry::MUTATION));
 
         delete dna_mutator_array_[indiv_id];
         dna_mutator_array_[indiv_id] = new DnaMutator(
@@ -1410,27 +1406,33 @@ void ExpManager::run_evolution(int nb_gen) {
 
         compute_fitness(indiv_id, selection_pressure_);
     }
+    sleep(1);
+    high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
     printf("Running evolution from %d to %d\n",AeTime::time(),AeTime::time()+nb_gen);
     bool firstGen = true;
 
-    //Function run_a_step should be finished before the next one start. Not parallizable !!!
+    //Function run_a_step should be finished before the next one start. Not parallizable because iterative !!!
     for (int gen = 0; gen < nb_gen+1; gen++) {
         AeTime::plusplus();
 
-        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+        high_resolution_clock::time_point tStep1 = high_resolution_clock::now();
         run_a_step(w_max_, selection_pressure_,firstGen);
-        high_resolution_clock::time_point t2 = high_resolution_clock::now();
-        auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
+        high_resolution_clock::time_point tStep2 = high_resolution_clock::now();
 
         firstGen = false;
         //printf("Generation %d : Best individual fitness %e\n",AeTime::time(),best_indiv->fitness);
+        auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::microseconds>( tStep2 - tStep1 ).count();
 
         if (AeTime::time() % backup_step_ == 0) {
             printf("Save !!\n");
             save(AeTime::time());
         }
     }
+
+    high_resolution_clock::time_point t2 = high_resolution_clock::now();
+    auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();
+    cout << "Durée : " << duration_gpu_start_stop_rna << " milliseconds" << endl;
 }
 
 

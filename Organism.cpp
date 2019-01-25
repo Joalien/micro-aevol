@@ -487,16 +487,12 @@ void Organism::look_for_new_promoters_starting_between(int32_t pos_1,int32_t pos
         return;
     }
     // Hamming distance of the sequence from the promoter consensus
-
-    //cout << pos_1 << "-" << pos_2 << endl;
-#pragma omp taskloop grainsize(1000)
     for (int32_t i = pos_1; i < pos_2; i++) {
-        int8_t dist = dna_->promoter_at(i);
+        auto dist = dna_->promoter_at(i);
 
         if (dist <= 4 && prom_pos.find(i) == prom_pos.end()) {
-            Promoter* nprom = new Promoter(i, dist);
-            int prom_idx = count_prom;
-            count_prom = count_prom + 1;
+            auto * nprom = new Promoter(i, dist);
+            int prom_idx = count_prom++;
 
             promoters[prom_idx] = nprom;
             prom_pos[i] = prom_idx;
