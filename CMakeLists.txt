@@ -1,7 +1,8 @@
-cmake_minimum_required(VERSION 3.8.2)
+cmake_minimum_required(VERSION 3.7.0)
 project(pdc_mini_aevol)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_FLAGS "-fopenmp -O3")
 
 add_subdirectory(SFMT-src-1.4)
 

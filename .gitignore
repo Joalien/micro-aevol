@@ -1,3 +1,12 @@
 pattern_matching_binary_string.pdf
 simulation*/
 .idea/
+cmake-build-debug/
+CMakeCache.txt 
+CMakeFiles/ 
+Makefile
+cmake_install.cmake
+micro-aevol.pdf
+pdc_mini_aevol
+*.a
+*.o
