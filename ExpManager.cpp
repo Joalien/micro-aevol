@@ -112,8 +112,6 @@ ExpManager::ExpManager(int grid_height, int grid_width, int seed, double mutatio
         geometric_area_+=((fabs(target[i]) + fabs(target[i+1])) / (600.0));
     }
 
-    printf("Initialized environmental target %f\n",geometric_area_);
-
 
     // Initializing the PRNGs
     for (int indiv_id = 0; indiv_id < nb_indivs_; ++indiv_id) {
@@ -143,7 +141,6 @@ ExpManager::ExpManager(int grid_height, int grid_width, int seed, double mutatio
 
     }
 
-    printf("Populating the environment\n");
 
     // Create a population of clones based on the randomly generated organism
     for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
@@ -1432,7 +1429,7 @@ void ExpManager::run_evolution(int nb_gen) {
 
     high_resolution_clock::time_point t2 = high_resolution_clock::now();
     auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::milliseconds>( t2 - t1 ).count();
-    cout << "Durée : " << duration_gpu_start_stop_rna << " milliseconds" << endl;
+    printf("TIME:%d\n",duration_gpu_start_stop_rna);
 }
 
 
@@ -1466,7 +1463,6 @@ void ExpManager::run_evolution_on_gpu(int nb_gen) {
         compute_fitness(indiv_id, selection_pressure_);
     }
 
-    printf("Running evolution from %d to %d\n",AeTime::time(),AeTime::time()+nb_gen);
     bool firstGen = true;
     for (int gen = 0; gen < nb_gen+1; gen++) {
         AeTime::plusplus();
