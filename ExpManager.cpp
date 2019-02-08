@@ -242,7 +242,7 @@ void ExpManager::save(int t) {
     gzwrite(exp_backup_file,&backup_step_,sizeof(backup_step_));
 
 
-    //rng_->save(exp_backup_file);
+    rng_->save(exp_backup_file);
 
     gzwrite(exp_backup_file,&w_max_,sizeof(w_max_));
     gzwrite(exp_backup_file,&selection_pressure_,sizeof(selection_pressure_));
@@ -1463,7 +1463,7 @@ void ExpManager::run_evolution_on_gpu(int nb_gen) {
     printf("Generation %d : \n",AeTime::time());
 
     if (AeTime::time() % backup_step_ == 0) {
-      save(AeTime::time());
+      //save(AeTime::time());
     }
   }
 }
