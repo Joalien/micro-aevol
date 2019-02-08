@@ -1423,7 +1423,7 @@ void ExpManager::run_evolution(int nb_gen) {
 
         if (AeTime::time() % backup_step_ == 0) {
             printf("Save !!\n");
-            save(AeTime::time());
+            //save(AeTime::time());
         }
     }
 
