@@ -67,12 +67,12 @@ void print_help(char* prog_path) {
     printf("  -g, --genome_size GENOME_SIZE\tGenome at the initial genome is GENOME_SIZE bps\n");
     printf("  -b, --backup_step BACKUP_STEP\tDo a simulation backup/checkpoint every BACKUP_STEP\n");
     printf("  -r, --resume RESUME_STEP\tResume the simulation from the RESUME_STEP generations\n");
+    printf("  -c, --core NUMBER_OF_CORE\tDefine a number of core to use in the simulation\n");
 }
 
 int main(int argc, char* argv[]) {
 
-    omp_set_num_threads(8);
-//    omp_set_schedule(omp_sched_dynamic, 100);
+
 
     int nbstep = -1;
     int width = -1;
@@ -82,8 +82,9 @@ int main(int argc, char* argv[]) {
     int resume = -1;
     int backup_step = -1;
     int seed = -1;
+    int core = 1;
 
-    const char * options_list = "e:::n:w:h:m:g:b:r:s:";
+    const char * options_list = "e:::n:w:h:m:g:b:r:s:c:";
     static struct option long_options_list[] = {
             // Print help
             { "help",     no_argument,        NULL, 'e' },
@@ -101,6 +102,8 @@ int main(int argc, char* argv[]) {
             { "resume", required_argument,  NULL, 'r' },
             // Backup step
             { "backup_step", required_argument,  NULL, 'b' },
+            // number of core
+            { "core", required_argument,  NULL, 'c' },
             // Seed
             { "seed", required_argument,  NULL, 's' },
             { 0, 0, 0, 0 }
@@ -151,6 +154,10 @@ int main(int argc, char* argv[]) {
                 nbstep = atoi(optarg);
                 break;
             }
+            case 'c' : {
+                core = atoi(optarg);
+                break;
+            }
             default : {
                 // An error message is printed in getopt_long, we just need to exit
                 printf("Error unknown parameter\n");
@@ -178,7 +185,9 @@ int main(int argc, char* argv[]) {
         if (seed == -1) seed = 566545665;
     }
 
-
+    printf("Number od core %d\n", core);
+    omp_set_num_threads(core);
+//    omp_set_schedule(omp_sched_dynamic, 100);
 
     ExpManager *exp_manager;
     if (resume == -1) {
