@@ -152,7 +152,7 @@ ExpManager::ExpManager(int grid_height, int grid_width, int seed, double mutatio
     }
 
     // Create backup and stats directory
-    create_directory();
+    //create_directory();
 }
 
 /**
@@ -490,13 +490,13 @@ void ExpManager::run_a_step(double w_max, double selection_pressure, bool first_
 
 
     // Stats
-    if (first_gen) {
-        stats_best = new Stats(this, AeTime::time(), true);
-        stats_mean = new Stats(this, AeTime::time(), false);
-    } else {
-        stats_best->reinit(AeTime::time());
-        stats_mean->reinit(AeTime::time());
-    }
+//    if (first_gen) {
+//        stats_best = new Stats(this, AeTime::time(), true);
+//        stats_mean = new Stats(this, AeTime::time(), false);
+//    } else {
+//        stats_best->reinit(AeTime::time());
+//        stats_mean->reinit(AeTime::time());
+//    }
 
     std::vector<int> already_seen;
     for (int indiv_id = 0; indiv_id < nb_indivs_; indiv_id++) {
@@ -529,8 +529,8 @@ void ExpManager::run_a_step(double w_max, double selection_pressure, bool first_
         }
     }
 
-    stats_best->write_best();
-    stats_mean->write_average();
+    //stats_best->write_best();
+    //stats_mean->write_average();
 }
 
 
@@ -1467,7 +1467,7 @@ void ExpManager::run_evolution_on_gpu(int nb_gen) {
     printf("Generation %d : \n",AeTime::time());
 
     if (AeTime::time() % backup_step_ == 0) {
-      //save(AeTime::time());
+        //save(AeTime::time());
     }
   }
 }
