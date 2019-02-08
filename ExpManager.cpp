@@ -1391,18 +1391,22 @@ void ExpManager::run_evolution(int nb_gen) {
         compute_fitness(indiv_id, selection_pressure_);
     }
 
+    high_resolution_clock::time_point t1 = high_resolution_clock::now();
+
     printf("Running evolution from %d to %d\n",AeTime::time(),AeTime::time()+nb_gen);
     bool firstGen = true;
+
+    //Function run_a_step should be finished before the next one start. Not parallizable because iterative !!!
     for (int gen = 0; gen < nb_gen+1; gen++) {
         AeTime::plusplus();
 
-      high_resolution_clock::time_point t1 = high_resolution_clock::now();
-      run_a_step(w_max_, selection_pressure_,firstGen);
-      high_resolution_clock::time_point t2 = high_resolution_clock::now();
-      auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
+        high_resolution_clock::time_point tStep1 = high_resolution_clock::now();
+        run_a_step(w_max_, selection_pressure_,firstGen);
+        high_resolution_clock::time_point tStep2 = high_resolution_clock::now();
 
         firstGen = false;
         //printf("Generation %d : Best individual fitness %e\n",AeTime::time(),best_indiv->fitness);
+        auto duration_gpu_start_stop_rna = std::chrono::duration_cast<std::chrono::microseconds>( tStep2 - tStep1 ).count();
 
         if (AeTime::time() % backup_step_ == 0) {
             printf("Save !!\n");
